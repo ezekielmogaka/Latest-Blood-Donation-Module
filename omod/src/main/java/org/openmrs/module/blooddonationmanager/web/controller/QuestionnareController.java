@@ -39,11 +39,24 @@ public class QuestionnareController {
 
 	@RequestMapping(method=RequestMethod.GET)
 	public String main(ModelMap model){
-        Donor donor=new Donor();
+        //Donor donor=new Donor();
 		Person person = new Person();
         DonorService donorService=Context.getService(DonorService.class);
         PersonService personService= Context.getPersonService();
 		model.addAttribute("donor", person);
+
+		List<Donor> donorList=donorService.getAllDonors();
+		Map<Integer,Person>personMap=new HashMap<Integer,Person>();
+
+
+		for(Donor donor:donorList){
+			personMap.put(donor.getDonorId(), personService.getPerson(donor.getPersonId()));
+		}
+
+		model.addAttribute("map", personMap);
+		model.addAttribute("donorList", donorList);
+		model.addAttribute("user", Context.getAuthenticatedUser());
+
 		return "/module/blooddonationmanager/questionnare";
 	}
 

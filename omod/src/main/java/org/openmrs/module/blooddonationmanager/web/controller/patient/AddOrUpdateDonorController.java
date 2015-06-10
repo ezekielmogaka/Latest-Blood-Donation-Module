@@ -9,6 +9,7 @@ import org.openmrs.module.blooddonationmanager.Donor;
 import org.openmrs.module.blooddonationmanager.api.BloodDonationManagerService;
 import org.openmrs.module.blooddonationmanager.api.DonorService;
 import org.openmrs.module.blooddonationmanager.api.model.PreparedDonorId;
+import org.openmrs.web.WebConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,15 +20,11 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-
 import org.openmrs.Location;
 import org.openmrs.Patient;
-import org.openmrs.PatientIdentifier;
-import org.openmrs.PatientIdentifierType;
 import org.openmrs.PersonAddress;
-import org.openmrs.PersonAttribute;
-import org.openmrs.PersonAttributeType;
 import org.openmrs.PersonName;
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -64,6 +61,34 @@ public class AddOrUpdateDonorController {
 		Patient pat = new Patient();
 		model.addAttribute("donor", pat);
 		return "/module/blooddonationmanager/patient/addOrUpdateDonorForm";
+	}
+
+	@RequestMapping(value ="/module/blooddonationmanager/editDonor.form"  , method = RequestMethod.GET)
+	public String updateform(HttpSession httpSession,
+							 @RequestParam(value = "givenName", required = false) int donorId,
+							 @RequestParam(value = "givenName", required = false) String givenName,
+							 @RequestParam(value = "middleName", required = false) String middleName,
+							 @RequestParam(value = "familyName", required = false) String familyName,
+							 @RequestParam(value = "gender", required = false) String gender)  {
+		try {
+			Person person =new Person();
+			Donor donor=new Donor();
+			donor.setPerson(person);
+
+			PersonService personService=Context.getService(PersonService.class);
+			DonorService donorService=Context.getService(DonorService.class);
+
+			donor.setGender(gender);
+			donor.setMiddle_name(middleName);
+			donor.setFamily_name(familyName);
+			donor.setGiven_name(givenName);
+			donorService.updateDonor(donor);
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated donor Successfully");
+			return "redirect:manage.form";
+		} catch (Exception ex) {
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+			return "redirect:manage.form";
+		}
 	}
 
 	@RequestMapping(value = "/module/blooddonationmanager/addOrUpdate.form", method = RequestMethod.GET)
@@ -105,7 +130,7 @@ public class AddOrUpdateDonorController {
 								@RequestParam("townshipDivision") String townshipDivision,
 								@RequestParam(value="donorPrepId", required=false) String donorPrepId,
 								@RequestParam(value="preregistered", required=false) String preregistered,
-								@RequestParam("fatherHusbandName") String fatherHusbandName,
+								@RequestParam("familyName") String familyName,
 								@RequestParam("gender") String gender,
 								@RequestParam(value = "donorDob", required = false) String donorDob
 	) throws ParseException{
@@ -182,6 +207,8 @@ public class AddOrUpdateDonorController {
 			person.setBirthdate(df.parse(donorDob));
 			person.setBirthdateEstimated(dobE);
 			person.addAddress(donorAddress);
+
+			donor.setGender(gender);
 
 /*
 			donor.setGender(gender);

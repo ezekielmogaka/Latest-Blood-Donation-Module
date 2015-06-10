@@ -40,6 +40,7 @@ public class Donor extends BaseOpenmrsObject implements Serializable{
     }
 
     private Integer id;
+    private String gender;
 	private String given_name;
 	private String family_name;
 	private String middle_name;
@@ -90,6 +91,9 @@ public class Donor extends BaseOpenmrsObject implements Serializable{
     public String getCountry() {
         return country;
     }
+    public String getGender() {
+        return gender;
+    }
     public String getCity_village() {
         return city_village;
     }
@@ -119,6 +123,9 @@ public class Donor extends BaseOpenmrsObject implements Serializable{
 
     public void setGiven_name(String given_name) {
         this.given_name = given_name;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public void setFamily_name(String family_name) {

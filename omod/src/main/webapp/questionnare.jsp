@@ -46,15 +46,33 @@
 
                             <li class="list-group-item list-group-item-warning">Choose existing donor
                             <select name = "donor_id" placeholder="Choose Donor" required>
-                             <c:forEach var="donor"  items="${donors}">
+                                <option>
+                                <c:forEach var="donor" items="${donorList}" varStatus="status">
+                                <table>
+                                <tr class="gradeC">
+                                    <td>
+                                            ${donor.donorId}
+                                    </td>
 
-                                <option value="${list.id}">${donor.fname} ${list.last_name}</option>
-                                      </c:forEach>
+
+                                        <c:set var="person" scope="page" value="${map[donor.donorId]}"/>
+                                    <td>${person.givenName}</td>
+                                    <td>${person.middleName}</td>
+                                    <td>${person.familyName}</td>
+                                    </tr>
+                                    </table>
+
+
+                                    <input style="width:100%; "type="text" class="form-control" id="healthDonor" placeholder="Choose Donor"><br><br>
+
+                            </c:forEach>
+                            </option>
                                         </select>
-                           <c:forEach var="donor" items="${donors}" varStatus="status">
-                                <input style="width:100%; "type="text" class="form-control" id="healthDonor" placeholder="Choose Donor"><br><br>
                             </li>
-                               </c:forEach>
+
+
+
+
 
 
                            <li class="list-group-item list-group-item-warning">Are you currently on any medication?

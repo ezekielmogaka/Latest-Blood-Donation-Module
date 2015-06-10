@@ -4,8 +4,8 @@
 <openmrs:require privilege="All Blood Bank" otherwise="/login.htm" redirect="/module/blooddonationmanager/main.form" />
 
 <br/>
-<div id="wrapper">
-    <div id="leftCol" style="float:left; min-width:500px">
+< id="wrapper">
+    < id="leftCol" style="float:left; min-width:500px">
 
 
         <form class="box" id="addDonorForm" method="post">
@@ -21,6 +21,7 @@
 
                                 <th style="width:10%">Donor #</th>
                                 <th style="width:10%">Given Name</th>
+                                <th style="width:10%">Middle Name</th>
                                 <th style="width:10%">Family Name</th>
                                 <th style="width:10%">Gender</th>
                                 <%--<th style="width:10%">Address</th>
@@ -49,6 +50,7 @@
        <%--&lt;%&ndash; <td>${donor.person.family_name}</td>--%>
         <c:set var="person" scope="page" value="${map[donor.donorId]}"/>
         <td>${person.givenName}</td>
+        <td>${person.middleName}</td>
         <td>${person.familyName}</td>
         <td>${person.gender}</td>
       <%-- <td>${person.address1}</td>--%>
@@ -59,12 +61,75 @@
 --%>
     <td>
     <button type="button" data-toggle="modal" data-target="#editDonor_${donor.donorId}" class="btn btn-success"><i
-    class="fa fa-edit"></i> Edit Donor Details
-    </button>
-    </td>
+    class="fa fa-edit"></i> Edit Donor Details </button>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="editDonor_${donor.donorId}" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel5" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                                aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-info" id="myModalLabel1">Edit Donor(${person.givenName})
+                            Details</h4>
+                    </div>
+
+                    <div class="modal-body">
+
+
+                        < action="<c:url value='/module/blooddonationmanager/editDonor.form' />" method="get">
+
+                            <div class="form-group">
+                                <label for="donorName">Given Name:</label>
+                                <input type="text" value="${person.givenName}" class="form-control" name="givenName"
+                                       id="edit_givenName_${donor.donorId}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="middleName">Middle Name:</label>
+                                <input type="text" value="${person.middleName}" class="form-control" name="middleName"
+                                       id="edit_middleName_${donor.donorId}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="familyName">Family Name:</label>
+                                <input type="text" value="${person.familyName}" class="form-control" name="familyName"
+                                       id="edit_familyName_${donor.donorId}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="middleName">Middle Name:</label>
+                                <input type="text" value="${person.middleName}" class="form-control" name="middleName"
+                                       id="edit_middleName_${donor.donorId}" required>
+                            </div>
+                        </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save
+                        </button>
+                        </div>
+                    </div>
+
+        </form>
+
+
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                class="fa fa-times"></i> Close
+        </button>
+
+
+
+
+
+
+
+        </td>
     </tr>
 
     </c:forEach>
+
 </tbody>
                             </table>
                         </div>
@@ -85,8 +150,16 @@
                     <input id="donId" name="donId" type="hidden" value="${donorIdentifier }"></input>
                 </div>
 
-                <div style="margin-top:12px;"><spring:message code="Donor Father/Husbandname"/></div>
-                <div style="margin-top:12px;display: inline-table;"><input type="text" id="fatherHusbandName" name="fatherHusbandName" value="" onblur="capitalize()" style="width:400px;"/></div><br/>
+
+                <div style="margin-top:12px;"><spring:message code="Middle Name"/></div>
+                <div><input type="text" id="middleName" name="middleName" value=""  style="width:600px;"/></div>
+                <div >
+
+                <div style="margin-top:12px;"><spring:message code="Family Name"/></div>
+                <div style="margin-top:12px;display: inline-table;"><input type="text" id="familyName" name="familyName" value="" onblur="capitalize()" style="width:400px;"/></div><br/>
+
+
+
                 <div style="margin-top:12px;display: inline-table;"><spring:message code="blooddonationmanager.patient.id"/>&nbsp;&nbsp;&nbsp;</div><div style="margin-top:12px;display: inline-table;"><b>${patientIdentifier }</b></div>
                 <div style="display:none;">
                     <input id="patId" name="patId" type="hidden" value="${patientIdentifier }"></input>
