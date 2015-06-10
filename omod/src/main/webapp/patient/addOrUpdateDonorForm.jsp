@@ -10,7 +10,6 @@
 
         <form class="box" id="addDonorForm" method="post">
             <div class="boxHeader">Search Donor by Name</div>
-<<<<<<< HEAD
 
 
             <div class="panel-body">
@@ -40,18 +39,21 @@
 <c:forEach var="donor" items="${donorList}" varStatus="status">
     <tr class="gradeC">
     <td>
-    ${donor.given_name}
-    </td>
-            ${donor.given_name}
+    ${donor.donorId}
         </td>
-        <td>${donor.faily_name}</td>
-        <td>${donor.address1}</td>
-        <td>${donor.city_village}</td>
-        <td>${donor.state_province}</td>
-        <td>${donor.county_district}</td>
-        <td>${donor.country}</td>
+        <td>  ${donor.personId}</td>
+        <td>${donor.person.givenName}</td>
+    <%--</td>
+            ${donor.given_name}
+        </td>--%>
+      <%--  <td>${donor.person.family_name}</td>
+        <td>${donor.person.address1}</td>
+        <td>${donor.person.city_village}</td>
+        <td>${donor.person.state_province}</td>
+        <td>${donor.person.county_district}</td>
+        <td>${donor.person.country}</td>--%>
     <td>
-    <button type="button" data-toggle="modal" data-target="#editDrug_${donor.id}" class="btn btn-success"><i
+    <button type="button" data-toggle="modal" data-target="#editDonor_${donor.id}" class="btn btn-success"><i
     class="fa fa-edit"></i> Edit Donor Details
     </button>
     </td>
@@ -66,12 +68,6 @@
         <%--</div>
     </div>--%>
 
-
-
-
-
-=======
->>>>>>> de9d922969fa2964879722c4ba209f57d8f110c9
             <div>
                 <div>
                     <div style="margin-top:12px;"><spring:message code="Donor Name"/></div>

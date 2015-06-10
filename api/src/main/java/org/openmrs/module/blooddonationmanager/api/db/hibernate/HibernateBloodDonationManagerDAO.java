@@ -22,14 +22,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Expression;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
-<<<<<<< HEAD
 import org.openmrs.*;
-=======
-import org.openmrs.Concept;
-import org.openmrs.Encounter;
-import org.openmrs.OrderType;
-import org.openmrs.Patient;
->>>>>>> de9d922969fa2964879722c4ba209f57d8f110c9
 import org.openmrs.api.context.Context;
 import org.openmrs.module.blooddonationmanager.api.db.BloodDonationManagerDAO;
 import org.openmrs.module.blooddonationmanager.api.model.BloodDonationManager;
@@ -91,15 +84,9 @@ public class HibernateBloodDonationManagerDAO implements BloodDonationManagerDAO
 	}
 
 	@SuppressWarnings("unchecked")
-<<<<<<< HEAD
 	public List<BloodDonationManager> getRecordsByPerson(Person person) {
 		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(BloodDonationManager.class);
 		criteria.add(Expression.eq("person", person));
-=======
-	public List<BloodDonationManager> getRecordsByPatient(Patient patient) {
-		Criteria criteria = sessionFactory.getCurrentSession().createCriteria(BloodDonationManager.class);
-		criteria.add(Expression.eq("patient", patient));
->>>>>>> de9d922969fa2964879722c4ba209f57d8f110c9
 		criteria.addOrder(Order.desc("bloodBankId"));
 		return (List<BloodDonationManager>) criteria.list();
 	}

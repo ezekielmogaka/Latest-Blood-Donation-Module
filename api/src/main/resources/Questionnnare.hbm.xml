@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 
 <hibernate-mapping package="org.openmrs.module.blooddonationmanager">
 
@@ -17,19 +17,19 @@
 	<property name="pregnant" type="java.lang.String" column="pregnant" length="255" />
 	<property name="onMedication" type="java.lang.String" column="allergy" length="255"  />
 	<property name="allergy" type="java.lang.String" column="onMedication" length="255"/>-->
-<!--
-	<class name="BloodDonationManager"
-		table="${project.parent.artifactId}_BloodDonationManager">
-		<id name="id" type="int" column="id" unsaved-value="0">
-			<generator class="native" />
-		</id>
-		<discriminator column="id" insert="false" />
-		<property name="uuid" type="java.lang.String" column="uuid"
-			length="38" unique="true" />
-	</class>
--->
+	<!--
+        <class name="BloodDonationManager"
+            table="${project.parent.artifactId}_BloodDonationManager">
+            <id name="id" type="int" column="id" unsaved-value="0">
+                <generator class="native" />
+            </id>
+            <discriminator column="id" insert="false" />
+            <property name="uuid" type="java.lang.String" column="uuid"
+                length="38" unique="true" />
+        </class>
+    -->
 
-    <!--<set name="myDrugs" table="pharmacy_myDispensedDrug"
+	<!--<set name="myDrugs" table="pharmacy_myDispensedDrug"
          inverse="true" lazy="true" fetch="select" cascade="all-delete-orphan">
         <key>
             <column name="myDrugId" not-null="false" />

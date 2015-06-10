@@ -29,7 +29,17 @@ public class Donor extends BaseOpenmrsObject implements Serializable{
 
 	private Integer donorId;
 	private Integer personId;
-	private Integer id;
+    private Person person;
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    private Integer id;
 	private String given_name;
 	private String family_name;
 	private String middle_name;

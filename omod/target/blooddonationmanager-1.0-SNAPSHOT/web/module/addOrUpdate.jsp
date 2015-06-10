@@ -19,20 +19,20 @@
                             <thead>
                             <tr>
 
+                                <th style="width:10%">Donor #</th>
                                 <th style="width:10%">Given Name</th>
                                 <th style="width:10%">Family Name</th>
-                                <th style="width:10%">Address</th>
+                                <th style="width:10%">Gender</th>
+                                <%--<th style="width:10%">Address</th>
                                 <th style="width:10%">Village</th>
                                 <th style="width:10%">Province</th>
                                 <th style="width:10%">District</th>
-                                <th style="width:10%">County</th>
+                                <th style="width:10%">County</th>--%>
 
 
                                 <%--<th style="width:10%">Units dispensed</th>--%>
                                 <%--<th style="width:10%">Last Batch</th>--%>
                                 <th style="width:10%">Edit Donor details</th>
-
-
                             </tr>
                             </thead>
                             <tbody>
@@ -40,17 +40,25 @@
 <c:forEach var="donor" items="${donorList}" varStatus="status">
     <tr class="gradeC">
     <td>
-    ${donor.given_name}
+    ${donor.donorId}
     </td>
-    <td>${donor.family_name}</td>
-    <td>${donor.address1}</td>
-    <td>${donor.city_village}</td>
-    <td>${donor.state_province}</td>
-        <td>${donor.county_district}</td>
-    <td>${donor.country}</td>
-
+       <%-- <td>
+        ${donor.personId}
+        </td>--%>
+        <%--<td>${donor.person.givenName}</td>--%>
+       <%--&lt;%&ndash; <td>${donor.person.family_name}</td>--%>
+        <c:set var="person" scope="page" value="${map[donor.donorId]}"/>
+        <td>${person.givenName}</td>
+        <td>${person.familyName}</td>
+        <td>${person.gender}</td>
+      <%-- <td>${person.address1}</td>--%>
+        <%--<td>${donor.person.city_village}</td>--%>
+        <%--<td>${donor.person.state_province}</td>--%>
+        <%--<td>${donor.person.county_district}</td>--%>
+        <%--<td>${donor.person.country}</td>--%>
+--%>
     <td>
-    <button type="button" data-toggle="modal" data-target="#editDrug_${donor.id}" class="btn btn-success"><i
+    <button type="button" data-toggle="modal" data-target="#editDonor_${donor.donorId}" class="btn btn-success"><i
     class="fa fa-edit"></i> Edit Donor Details
     </button>
     </td>

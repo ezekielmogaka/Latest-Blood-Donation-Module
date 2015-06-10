@@ -13,14 +13,7 @@
  */
 package org.openmrs.module.blooddonationmanager.api;
 
-<<<<<<< HEAD
 import org.openmrs.*;
-=======
-import org.openmrs.Concept;
-import org.openmrs.Encounter;
-import org.openmrs.Order;
-import org.openmrs.Patient;
->>>>>>> de9d922969fa2964879722c4ba209f57d8f110c9
 import org.openmrs.api.OpenmrsService;
 import org.openmrs.module.blooddonationmanager.api.model.BloodDonationManager;
 import org.openmrs.module.blooddonationmanager.api.model.BlooddonationManagerForm;
@@ -37,7 +30,7 @@ import java.util.List;
  * <code>
  * Context.getService(BloodDonationService.class).someMethod();
  * </code>
- * 
+ *
  * @see org.openmrs.api.context.Context
  */
 @Transactional
@@ -56,11 +49,7 @@ public interface BloodDonationManagerService extends OpenmrsService {
 
 	List<PreparedDonorId> getUnusedPreparedId();
 
-<<<<<<< HEAD
 	List<BloodDonationManager> getRecordsByPerson(Person person);
-=======
-	List<BloodDonationManager> getRecordsByPatient(Patient patient);
->>>>>>> de9d922969fa2964879722c4ba209f57d8f110c9
 
 	void saveBloodBank(BloodDonationManager bloodBank);
 

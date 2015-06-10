@@ -15,15 +15,8 @@ package org.openmrs.module.blooddonationmanager.api.impl;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-<<<<<<< HEAD
 import org.openmrs.*;
 import org.openmrs.Person;
-=======
-import org.openmrs.Concept;
-import org.openmrs.Encounter;
-import org.openmrs.Order;
-import org.openmrs.Patient;
->>>>>>> de9d922969fa2964879722c4ba209f57d8f110c9
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.openmrs.module.blooddonationmanager.api.BloodDonationManagerService;
 import org.openmrs.module.blooddonationmanager.api.db.BloodDonationManagerDAO;
@@ -66,13 +59,8 @@ public class BloodDonationManagerServiceImpl extends BaseOpenmrsService implemen
         return getDao().getUnusedPreparedId();
     }
 
-<<<<<<< HEAD
     public List<BloodDonationManager> getRecordsByPerson(Person person) {
         return getDao().getRecordsByPerson(person);
-=======
-    public List<BloodDonationManager> getRecordsByPatient(Patient patient) {
-        return getDao().getRecordsByPatient(patient);
->>>>>>> de9d922969fa2964879722c4ba209f57d8f110c9
     }
 
     public void saveBloodBank(BloodDonationManager bloodBank) {

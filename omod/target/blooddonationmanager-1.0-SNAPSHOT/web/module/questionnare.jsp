@@ -54,6 +54,8 @@
                            <c:forEach var="donor" items="${donors}" varStatus="status">
                                 <input style="width:100%; "type="text" class="form-control" id="healthDonor" placeholder="Choose Donor"><br><br>
                             </li>
+                               </c:forEach>
+
 
                            <li class="list-group-item list-group-item-warning">Are you currently on any medication?
                             <input style="width:100%; "type="text" class="form-control" id="healthDonor" placeholder="Yes or No"><br><br>

@@ -2,7 +2,6 @@
 <%@ include file="/WEB-INF/template/header.jsp"%>
 <%@ include file="../includes/js_css.jsp" %>
 
-
 <link type="text/css" rel="stylesheet"  href="${pageContext.request.contextPath}/moduleResources/blooddonationmanager/styles/common.css" />
 <openmrs:require privilege="All Blood Bank" otherwise="/login.htm" redirect="/module/blooddonationmanager/main.form" />
 

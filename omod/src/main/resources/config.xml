@@ -15,26 +15,23 @@
 	<require_version>${openMRSVersion}</require_version>
 	<!-- / Module Properties -->
 
-	
+
 	<!-- Module Activator -->
 	<activator>${project.parent.groupId}.${project.parent.artifactId}.BloodDonationManagerActivator</activator>
-	
-	
+
+
 	<!-- Adds link to admin page -->
 	<extension>
 		<point>org.openmrs.admin.list</point>
 		<class>${project.parent.groupId}.${project.parent.artifactId}.extension.html.AdminList</class>
 	</extension>
-	
+
 	<!-- Maps hibernate file's, if present -->
 	<mappingFiles>
-				
+
 		BloodDonationManager.hbm.xml
-<<<<<<< HEAD
 		Donor.hbm.xml
-=======
->>>>>>> de9d922969fa2964879722c4ba209f57d8f110c9
-				
+
 	</mappingFiles>
 
 	<!-- Internationalization -->
