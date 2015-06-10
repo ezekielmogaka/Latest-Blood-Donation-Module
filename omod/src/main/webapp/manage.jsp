@@ -12,7 +12,7 @@
         <li class="first">
             <a href="main.form" style="font-size:large; font-weight:bold; text-decoration:none;">Blood Bank System</a>
         </li>
-
+<br/>git
         <openmrs:hasPrivilege privilege="Edit Encounters">
             <li <c:if test='<%= request.getRequestURI().contains("queue") %>'>class="active"</c:if>>
                 <a href="queue.form">Queue</a>
