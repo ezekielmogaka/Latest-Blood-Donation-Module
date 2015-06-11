@@ -2,7 +2,7 @@
 <%@ include file="includes/js_css.jsp" %>
 
 <!DOCTYPE html>
-< lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,86 +24,76 @@
     <![endif]-->
 </head>
 
-<>
-
-<div class="boxHeader" style="padding-right: 10%; padding-left: 10%;">
-<div class="container">
-    <div class="table-responsive" style="width:80%; margin-left:10%; margin-right:10%;">
+<div class="container" style="padding: 20px;">
+    <div class="boxHeader" style="padding:20px;">
+    <div class="table-responsive">
         <form>
-            <div class="form-group" style="width:auto;">
-                <ul class="list-group" class="input-group">
-
-                    <li class="list-group-item list-group-item-warning">
-                        <table class="table table-hover">
-                            <caption style="text-align: center;"><h2>Blood Bank Inventory</h2></caption>
-                            <thead>
-                            <tr>
-                                <th>Blood Type</th>
-                                <th>Quantity</th>
-                                <th></th>
-                                <th></th>
-
+            <div class="form-group">
+                <table class="table table-hover">
+                    <caption style="text-align: center;"><h2>Blood Inventory </h2></caption>
+                    <thead>
+                    <tr>
+                        <th>Blood Type</th>
+                        <th>Quantity</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <td>O+</td>
+                    <td>203 pints</td>
+                    <td>
+                        <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </td>
                             </tr>
-                            </thead>
-                            <tbody>
-                                <td>O+</td>
-                                <td>203 pints</td>
-                            <td>
-                                <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button type="submit" class="btn btn-primary">Delete</button>
-                            </td>
+                    <tr>
+                        <td>O-</td>
+                        <td>748 pints</td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </td>
 
-                            </tr>
-                            <tr>
-                                <td>O-</td>
-                                <td>748 pints</td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-primary">Delete</button>
-                                </td>
+                    </tr>
+                    <tr>
+                        <td>A+</td>
+                        <td>123 pints</td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </td>
 
-                            </tr>
-                            <tr>
-                                <td>A+</td>
-                                <td>123 pints</td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-primary">Delete</button>
-                                </td>
+                    </tr>
 
-                            </tr>
+                    <tr>
+                        <td>A-</td>
+                        <td>23 pints</td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </td>
 
-                            <tr>
-                                <td>A-</td>
-                                <td>23 pints</td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-primary">Delete</button>
-                                </td>
+                    </tr>
+                    <tr>
+                        <td>B+</td>
+                        <td>48 pints</td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </td>
 
-                            </tr>
-                            <tr>
-                                <td>B+</td>
-                                <td>48 pints</td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-primary">Delete</button>
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td>B-</td>
-                                <td>23 pints</td>
-                                <td>
-                                    <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <button type="submit" class="btn btn-primary">Delete</button>
-                                </td>
-
-                            </tr>
-                            </tbody>
-                        </table>
-                    </li>
-                </ul>
+                    </tr>
+                    <tr>
+                        <td>B-</td>
+                        <td>23 pints</td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button type="submit" class="btn btn-primary">Delete</button>
+                        </td>
+                   </tr>
+                </tbody>
+             </table>
             </div>
         </form>
     </div>

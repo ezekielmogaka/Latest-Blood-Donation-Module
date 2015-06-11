@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="foxtrot" content="">
 
-    <title>Blood Bank Manager</title>
+    <title>Blood Bank Manager Home</title>
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -24,63 +24,35 @@
     <![endif]-->
 </head>
 
-<body>
+<div class="container" style="padding: 20px;">
+    <div class="boxHeader" style="padding:20px;">
+        <div class="table-responsive">
 
-<br><br>
-<button type="button" class="btn btn-default btn-lg">
-    <span class="glyphicon glyphicon-user"></span> User
-</button>
+            <button type="button" class="btn btn-primary">
+                <span class="glyphicon glyphicon-user"></span> User
+            </button>
+            <button type="button" class="btn btn-primary">
+                <span class="glyphicons glyphicons-parents"></span>
+            </button>
+            <button type="button" class="btn btn-primary">
+                    <span class="glyphicons glyphicons-charts"></span>
+            </button>
+                    <span class="glyphicons glyphicons-parents"></span>
 
+                    <img src="resources/styles/images/addDonor.png" class="img-rounded">
 
-<div class="container-fluid">
+                    <img src="openmrs/moduleResources/blooddonationmanager/styles/images/addDonor.png" class="img-rounded">
 
+                    <img src="resources/styles/images/findDonor.png" class="img-rounded">
 
-            <div class="table-responsive" style="width:80%; margin-left:10%; margin-right:10%;">
-                <h2 class="sub-header">Blood Donation Questionnaire</h2>
-                <form style="width:80%;margin-right: 10%; margin-left: 10%;">
-                    <div class="form-group" style="width:auto;">
-                        <label class="sr-only" for="healthDonor">Questionnaire</label>
+                    <img src="resources/styles/images/View Queue.png" class="img-rounded">
 
-                        <ul class="list-group" class="input-group" style="display: -moz-groupbox; width:80%; padding-right: 5%; margin-left: 5%;">
-
-                            <li class="list-group-item list-group-item-warning">
-                                Date:<input id="date" value="${currentDate}" onFocus="showCalendar(this);" style="text-align:right;"/>
-                            </li>
-                           <li class="list-group-item list-group-item-warning">Are you currently on any medication?
-                            <input style="width:100%; "type="text" class="form-control" id="healthDonor" placeholder="Yes or No">
-                               Are you allergic to any medication? If yes, please explain.<input style="width:100%;type="text" class="form-control" id="onMedicationDonor" placeholder="Yes or No">
-                            Have you suffered from malaria recently?
-                            <input style="width:100%;" type="text" class="form-control" id="malariaDonor" placeholder="Yes or No">
-                            Are you pregnant?
-                            <input style="width:100%;" type="text" class="form-control" id="pregnantDonor" placeholder="Yes or No or I am male">
-                            Have you ever donated blood before?
-                            <input style="width:100%;type="text" class="form-control" id="donatedBlood" placeholder="Yes or No">
-                            Has blood ever been transfused to you?
-                            <input style="width:100%;type="text" class="form-control" id="bloodTransfusion" placeholder="Yes or No">
-                            Has any organ ever been transplanted to you?
-                            <input style="width:100%;type="text" class="form-control" id="organTransplant" placeholder="Yes or No">
-                            Have you been pricked with a needle recently?
-                            <input style="width:100%;type="text" class="form-control" id="needleRisks" placeholder="Yes or No">
-                            Have you ever suffered from syphillis or gonorrhea?
-                            <input style="width:100%;type="text" class="form-control" id="syphillisGonorrhea" placeholder="Yes or No">
-                            Do you have a tattoo?
-                            <input style="width:100%;type="text" class="form-control" id="tatooDonor" placeholder="Yes or No">
-                            Do you have any piercings?
-                            <input style="width:100%;type="text" class="form-control" id="piercingDonor" placeholder="Yes or No">
-
-                               <button type="submit" class="btn btn-primary">Submit Questionnaire</button>
-
-                           </li>
-                        </ul>
-                    </div>
-                    <br><br>
-
-                </form>
-            </div>
+                    <img src="resources/styles/images/inventory.png" class="img-rounded">
+                </li>
+            </ul>
+        </div>
         </div>
     </div>
-</div>
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

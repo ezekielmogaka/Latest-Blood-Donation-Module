@@ -134,20 +134,86 @@
 	}
 </script>
 
-<div class="boxHeader">
-	<strong>See patient List by choosing lab</strong>
-</div>
-<div class="box">
-	Date:
-	<input id="date" value="${currentDate}" onFocus="showCalendar(this);" style="text-align:right;"/>
-	Patient ID/Name:
-	<input id="phrase"/>
-	<br/>
-	<input type="button" value="Get patients" onClick="getTests(1);"/>
-	<input type="button" value="Reset" onClick="alert('Reset');"/>
-</div>
+
+<div class="container" style="padding: 20px;">
+	<div class="boxHeader" style="padding:20px;">
+	<div class="box">
+		Date:
+		<input id="date" value="${currentDate}" onFocus="showCalendar(this);" style="text-align:right;"/>
+		Patient ID/Name:
+		<input id="phrase"/>
+		<input type="button" value="Get Requests" onClick="getRequests(1);"/>
+		<%--get Request function--%>
+		<input type="button" value="Reset" onClick="alert('Reset');"/>
+	</div>
 
 <div id="tests">
 </div>
+
+	<div class="table-responsive">
+		<table class="table">
+			<caption style="text-align: center;"><h2>Blood Request Queue</h2></caption>
+			<thead>
+			<tr>
+				<th>Patient Id</th>
+				<th>Blood Type</th>
+				<th>Rhesus Factor</th>
+				<th>Request Date</th>
+				<th>Status</th>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>29/10/2013</td>
+				<td>Pending</td>
+				<td><button type="submit" class="btn btn-primary">Collected</button>&nbsp;&nbsp;
+					<button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+					<button type="submit" class="btn btn-primary">Delete</button>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>10/11/2013</td>
+				<td>Collected</td>
+				<td><button type="submit" class="btn btn-primary">Collected</button>&nbsp;&nbsp;
+					<button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+					<button type="submit" class="btn btn-primary">Delete</button>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>19/11/2013</td>
+				<td>Collected</td>
+				<td><button type="submit" class="btn btn-primary">Collected</button>&nbsp;&nbsp;
+					<button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+					<button type="submit" class="btn btn-primary">Delete</button>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td>21/11/2013</td>
+				<td>Pending</td>
+				<td><button type="submit" class="btn btn-primary">Collected</button>&nbsp;&nbsp;
+					
+					<button type="submit" class="btn btn-primary">Edit</button>&nbsp;&nbsp;
+					<button type="submit" class="btn btn-primary">Delete</button>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+</div>
+
 
 <%@ include file="/WEB-INF/template/footer.jsp" %>  

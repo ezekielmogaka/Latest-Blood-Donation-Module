@@ -31,8 +31,27 @@ public class  BloodDonationManagerManageController {
 	protected final Log log = LogFactory.getLog(getClass());
 
 	@RequestMapping(value = "/module/blooddonationmanager/manage", method = RequestMethod.GET)
-	public void manage(ModelMap model) {
-		model.addAttribute("user", Context.getAuthenticatedUser());
+	public void manage(ModelMap model) {model.addAttribute("user", Context.getAuthenticatedUser());
+	}
+
+	@RequestMapping(value = "/module/blooddonationmanager/home", method = RequestMethod.GET)
+	public void home(ModelMap model) {model.addAttribute("user", Context.getAuthenticatedUser());
+	}
+
+	@RequestMapping(value = "/module/blooddonationmanager/bloodResults", method = RequestMethod.GET)
+	public void bloodResults(ModelMap model) {model.addAttribute("user", Context.getAuthenticatedUser());
+	}
+
+	@RequestMapping(value = "/module/blooddonationmanager/addOrUpdate", method = RequestMethod.GET)
+	public void addOrUpdate(ModelMap model) {model.addAttribute("user", Context.getAuthenticatedUser());
+	}
+
+	@RequestMapping(value = "/module/blooddonationmanager/questionnaire", method = RequestMethod.GET)
+	public void questionnaire(ModelMap model) {model.addAttribute("user", Context.getAuthenticatedUser());
+	}
+
+	@RequestMapping(value = "/module/blooddonationmanager/Inventory", method = RequestMethod.GET)
+	public void inventory(ModelMap model) {model.addAttribute("user", Context.getAuthenticatedUser());
 	}
 
 	@RequestMapping(value = "/module/blooddonationmanager/main.form", method=RequestMethod.GET)

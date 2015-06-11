@@ -1,4 +1,4 @@
-
+<br/>
 <%@ include file="mainMenu.jsp"%>
 <%--<%@ include file="/includes/js_css.jsp" %>--%>
 <openmrs:require privilege="All Blood Bank" otherwise="/login.htm" redirect="/module/blooddonationmanager/main.form" />
